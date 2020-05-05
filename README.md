@@ -1,0 +1,1 @@
+Once the specific directory path is given, this program extracts all the "JPEG, JPG, PNG" images in the sub directories and clusters them based on RGB similarity values.
