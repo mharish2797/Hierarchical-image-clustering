@@ -20,10 +20,10 @@ dimension = 2**5
 length, width = dimension, dimension
 THRESHOLD = 0.08
 MAX_SCORE = float('inf')
-MAX_ITERATIONS = 1000
+MAX_ITERATIONS = 10000
 
 patterns = ["*.jpg", "*.jpeg", "*.png"]
-dir_path = "E:\\Photos\\Latest\\USC\\Summer 2019 - Seattle\\"
+dir_path = "<<Directory Path>>"
 
 clusters = dict()
 
@@ -40,7 +40,7 @@ def get_image(img_path):
 #    img = resize(imread(img_path), (length, width))
     return img
      
-def undone(dir_path):
+def undo_nesting_dir(dir_path):
     for path, subdirs, files in os.walk(dir_path):
         for i, name in enumerate(files):
             for pattern in patterns:
@@ -50,7 +50,7 @@ def undone(dir_path):
         if not os.listdir(path):
             os.rmdir(path)
 
-undone(dir_path)
+undo_nesting_dir(dir_path)
 
 CORPUS = dict()
                 
